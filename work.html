@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Work | Anirudh Shenai</title>
+  <meta name="description" content="Work history of Anirudh Shenai: Lightship, Snap and TikTok.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>Anirudh Shenai</h1>
+      <p class="tagline">M.S. Analytics candidate at Georgia Tech (expected May 2027), moving into data science from over four years in software test engineering.</p>
+      <nav aria-label="Main">
+        <ul><li><a href="index.html">Home</a></li><li><a href="work.html" aria-current="page">Work</a></li><li><a href="school-projects.html">School Projects</a></li><li><a href="personal-projects.html">Personal Projects</a></li><li><a href="contact.html">Contact</a></li></ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <h2>Work</h2>
+
+      <article class="project job">
+        <h3>Lightship, Senior Software Test Engineer</h3>
+        <p class="meta">South San Francisco, CA &middot; Jul 2026 &ndash; Nov 2026</p>
+        <p class="blurb">Electric recreational vehicle (RV) company; tested the trailer's embedded control systems.</p>
+        <ul>
+          <li>Simulated synthetic electrical noise on the trailer roof's 250 ms filter to catch a bug that caused a false stop, improving system reliability and giving users a smoother experience.</li>
+          <li>Ran 15+ light-dimming tests in Python with simulated data to catch where actual brightness deviated from the firmware formula (concave, not linear), then escalated the hardware issue.</li>
+          <li>Built an internal web platform storing test results in AWS RDS, with filters by component, tester and run type and failures filed to Jira; used Claude to write most of the code and checked it against requirements.</li>
+        </ul>
+      </article>
+
+      <article class="project job">
+        <h3>Snap Inc., Software Test Engineer</h3>
+        <p class="meta">Palo Alto, CA &middot; Mar 2025 &ndash; Apr 2026</p>
+        <p class="blurb">Worked on the Monetization team to validate end-to-end ad flows.</p>
+        <ul>
+          <li>Supported ad A/B experiments: assigned test users to groups, tracked each treatment in Looker, worked with data science and ads analytics on rollout and confounding factors, and built tests for winning treatments while keeping the others compatible.</li>
+          <li>Isolated a 90% click-through rate drop on new ads by segmenting CTR by app version, reproducing the bug, and running an automated bisect that traced it to a change that stopped swipe-ups from billing; the fix shipped.</li>
+          <li>Built metric validation tooling that cut manual QA effort and improved confidence in releases and experiments.</li>
+        </ul>
+      </article>
+
+      <article class="project job">
+        <h3>TikTok, Software Development Engineer in Test</h3>
+        <p class="meta">San Jose, CA &middot; May 2024 &ndash; Mar 2025</p>
+        <p class="blurb">Validated AI platform stability and functionality for the Intelligent Creations team.</p>
+        <ul>
+          <li>Load-tested a GPU-backed service by varying queries per second and tracking GPU, CPU and memory to find how many users each deployment could support, separating real changes from noise.</li>
+          <li>Wrote the backend of a Django platform (MariaDB, MongoDB) that let data science teams run performance tests on demand and see success rate, throughput and resource usage in one view.</li>
+          <li>Used MongoDB queries to track each load test task and SQL on MariaDB to track the parent job, for sync and async runs.</li>
+          <li>Helped establish a 60% GPU-utilization standard and worked with data analytics on DAU-based capacity sizing.</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>Raw datasets are not hosted on this site. Course project write-ups are available on request.</p>
+    </div>
+  </footer>
+</body>
+</html>

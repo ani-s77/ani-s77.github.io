@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>School Projects | Anirudh Shenai</title>
+  <meta name="description" content="Georgia Tech M.S. Analytics course projects by Anirudh Shenai.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>Anirudh Shenai</h1>
+      <p class="tagline">M.S. Analytics candidate at Georgia Tech (expected May 2027), moving into data science from over four years in software test engineering.</p>
+      <nav aria-label="Main">
+        <ul><li><a href="index.html">Home</a></li><li><a href="work.html">Work</a></li><li><a href="school-projects.html" aria-current="page">School Projects</a></li><li><a href="personal-projects.html">Personal Projects</a></li><li><a href="contact.html">Contact</a></li></ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <h2>School Projects</h2>
+      <p>Coursework from my Georgia Tech M.S. in Analytics.</p>
+
+      <article class="project">
+        <h3>Credit Default Prediction <span class="status">In progress</span></h3>
+        <p class="meta">Georgia Tech Computational Data Analytics &middot; Team of 3 &middot; Aug 2026 &ndash; present</p>
+        <p><strong>Question:</strong> Can we predict which loans will default, and does the model still work on later years it has not seen?</p>
+        <p>Using Lending Club data (2007&ndash;2018), we train on earlier years and test on later ones. We built a first model and compared several basic model types as a baseline, and we are checking how rejected applicants differ from approved ones to look for selection bias.</p>
+        <p class="tools">Tools: Python</p>
+      </article>
+
+      <article class="project">
+        <h3>Autonomous Vehicle Depot Siting <span class="status">In progress</span></h3>
+        <p class="meta">Georgia Tech Data and Visual Analytics &middot; Team of 4 &middot; Aug 2026 &ndash; present</p>
+        <p><strong>Question:</strong> Where should self-driving taxi depots go in Chicago to keep land and empty-driving costs down while meeting rider demand?</p>
+        <p>We screened 32,007 Cook County parcels down to 2,018 candidate lots by zoning, size and distance to an electrical substation, using Chicago rideshare trips as the demand data. I helped design the evaluation (a cost sensitivity sweep, with sites chosen on 2024 trips and tested on 2025 trips) and built a k-means baseline to check whether the optimization beats simple clustering.</p>
+        <p class="tools">Tools: Python, SQL</p>
+      </article>
+
+      <article class="project">
+        <h3>Dysarthria Speech Understanding via Multi-Task Learning</h3>
+        <p class="meta">Georgia Tech Deep Learning &middot; Team of 4 &middot; May 2026 &ndash; Aug 2026</p>
+        <p><strong>Question:</strong> How well do modern speech models handle speech from people with dysarthria?</p>
+        <p>I built the testing setup and parameter search to compare Whisper and Wav2Vec 2.0. Tuning cut Whisper's word error rate from 39.2% to 31.3%. On 28 unseen speakers (UA-Speech), Whisper cut intelligibility error by about 53% against a traditional baseline. The model flagged impairment even when it missed the exact severity grade: 21.7% exact accuracy, 94.5% within one level.</p>
+        <p class="tools">Tools: Python, PyTorch, Whisper, Wav2Vec 2.0</p>
+      </article>
+
+      <article class="project">
+        <h3>Passenger Vehicle Supply and Demand Forecasting</h3>
+        <p class="meta">Georgia Tech Time Series &middot; Team of 3 &middot; Jan 2026 &ndash; May 2026</p>
+        <p><strong>Question:</strong> Do supply conditions, travel activity and gas prices help forecast U.S. vehicle sales better than assuming next month looks like this month?</p>
+        <p>Change-point detection found four breaks in 24 years of monthly sales (April 2008, August 2011, February 2014, December 2019), and what drives sales changed from period to period. On a Feb 2022 to Jan 2024 holdout, the simple benchmark (3.3% average error) beat our best model (6.5%), so the outside variables explained more but did not improve short-term forecasts.</p>
+        <p class="tools">Tools: Python, statsmodels, ruptures, ARIMAX, SARIMAX, Prophet</p>
+      </article>
+
+      <article class="project">
+        <h3>Trading Strategy Evaluation</h3>
+        <p class="meta">Georgia Tech Machine Learning for Trading &middot; Individual &middot; May 2025 &ndash; Aug 2025</p>
+        <p><strong>Question:</strong> Can simple rules built from price indicators beat buy-and-hold on JPMorgan stock, and can a machine learning model do better?</p>
+        <p>A rule-based strategy built from three indicators lost less than buy-and-hold on unseen data (-3.4% vs -8.5%). A random forest trained on buy, sell and hold labels beat the rules on the data it was built on but fell behind on unseen data, a sign of overfitting, and I reported it that way.</p>
+        <p class="tools">Tools: Python, random forest</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>Raw datasets are not hosted on this site. Course project write-ups are available on request.</p>
+    </div>
+  </footer>
+</body>
+</html>
