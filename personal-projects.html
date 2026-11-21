@@ -35,10 +35,12 @@
         <p><strong>Pipeline.</strong> The program wrote goalscorers, assisters, per-game player ratings, injuries, suspensions and yellow cards into the sheet. To stay within the sheet's write limits, it packed several values into one cell separated by ";" and formulas split them back out.</p>
         <p><strong>Sheet logic.</strong> IFS scored each result as a win, draw or loss. SUMIF totaled each team's wins, draws, losses and goals. SORT built the league table from points and goal difference. FILTER built top-scorer and top-assist lists, excluding own goals and unassisted goals. QUERY pulled each player's two most recent ratings to compute form, and LOOKUP turned form into a rating adjustment that fed back into the rosters. Conditional formatting colored players red or green by form.</p>
         <p><strong>Scope.</strong> 15 tabs, including league results, transfers, squad sheets, academies, player morale (the "Wantaway list"), European and domestic cups, and a match database of about 480,000 filled cells.</p>
-        <!-- TODO: add 2-3 screenshots: league table, squad sheets with form colors, Technical Descriptions tab -->
+        <figure class="figure shot"><img src="img/hpl-league-table.png" alt="Simulated Premier League table at the halfway point, with places, wins, draws, losses, points and goal difference" loading="lazy"><figcaption>League table halfway through a season, built with SUMIF and SORT.</figcaption></figure>
+        <figure class="figure shot"><img src="img/hpl-squad-form.png" alt="Squad sheets for several teams with player ratings, cells shaded red or green by form" loading="lazy"><figcaption>Squad sheets. Conditional formatting shades each player red or green by recent form.</figcaption></figure>
+        <figure class="figure shot"><img src="img/hpl-technical-descriptions.png" alt="Technical Descriptions tab listing each sheet, the formulas it uses and what they do" loading="lazy"><figcaption>The workbook's Technical Descriptions tab.</figcaption></figure>
         <ul class="links">
           <li><a href="https://docs.google.com/spreadsheets/d/1QxcviNd2_41C7n80YJP0qMjTAd_sKYSXLIig0c9iI7s/edit?usp=sharing">Season 4 workbook (view only)</a></li>
-          <!-- TODO: add code link once the repo is on the main GitHub account -->
+          <li><a href="https://github.com/ani-s77/HypotheticalPL">Code on GitHub</a></li>
         </ul>
         <p class="tools">Tools: Python, Google Sheets</p>
       </article>

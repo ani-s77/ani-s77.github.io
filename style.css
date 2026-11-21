@@ -236,3 +236,4 @@ a:hover { color: #9ccdf0; }
 .figure .bar-hi { fill: var(--accent); }
 .figure .line { stroke: var(--accent); }
 .subhead { margin: 0 0 6px; color: var(--muted); font-size: 0.92rem; }
+.figure.shot img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 6px; }
