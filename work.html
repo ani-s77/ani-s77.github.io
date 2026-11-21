@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Work | Anirudh Shenai</title>
-  <meta name="description" content="Work history of Anirudh Shenai: Lightship, Snap and TikTok.">
+  <meta name="description" content="Work history of Anirudh Shenai: Lightship, Snap, TikTok and SpaceX (Swarm).">
   <link rel="stylesheet" href="style.css">
   <script>document.documentElement.classList.add('js')</script>
 </head>
@@ -12,7 +12,7 @@
   <header>
     <div class="wrap">
       <h1>Anirudh Shenai</h1>
-      <p class="tagline">M.S. Analytics candidate at Georgia Tech (expected May 2027), moving into data science from over four years in software test engineering.</p>
+      <p class="tagline">Data analyst in the San Francisco Bay Area. A/B test analysis, metric validation and root-cause work at Snap, TikTok, SpaceX and Lightship. Georgia Tech M.S. Analytics, May 2027.</p>
     </div>
   </header>
   <div class="navbar">
@@ -26,37 +26,37 @@
   <main class="wrap">
     <section>
       <h2>Work</h2>
-      <p class="legend">Tap the + on any point to see it as problem, what I did, and result.</p>
+      <p class="legend">Select + on any point to see the problem, what I did, and the result.</p>
       <!-- To add a point: copy one <li class="point"> block, give it a new id (and match the button's aria-controls), and edit the text. -->
 
-      <article class="project job">
+      <article class="project job" id="lightship">
         <h3>Lightship, Senior Software Test Engineer</h3>
         <p class="meta">South San Francisco, CA &middot; Jul 2026 &ndash; Nov 2026</p>
-        <p class="blurb">Electric recreational vehicle (RV) company; tested the trailer's embedded control systems.</p>
+        <p class="blurb">Electric recreational vehicle (RV) company; validated data from the trailer's embedded control systems.</p>
         <ul>
           <li class="point">
             <div class="point-row">
-              <span class="point-text">Simulated synthetic electrical noise on the trailer roof's 250 ms filter to catch a bug that caused a false stop, improving system reliability and giving users a smoother experience.</span>
+              <span class="point-text">Measured light output against dimming settings sent over the CAN bus across 21 hardware tests and found a curved, not linear, response: a setting meant for 25% brightness gave 50%. Traced it to circuit noise, giving key quantified evidence for a planned hardware change.</span>
               <button type="button" class="toggle" aria-expanded="false" aria-controls="p1" aria-label="Show breakdown">+</button>
             </div>
             <div class="flow" id="p1">
               <ol class="steps">
-                <li class="step"><span class="label">Problem</span><p>Sensor noise on the trailer could set off false alarms.</p></li>
-                <li class="step"><span class="label">What I did</span><p>Generated synthetic noisy data to test the 250 ms smoothing filter, checking that sensors only reacted to real, sustained signals.</p></li>
-                <li class="step result"><span class="label">Result</span><p>Caught a bug that caused a false stop, making the system more reliable and the experience smoother for users.</p></li>
+                <li class="step"><span class="label">Problem</span><p>On the trailer's dimmer, a brightness setting should give that brightness, but the light output didn't follow it.</p></li>
+                <li class="step"><span class="label">What I did</span><p>Measured light output against dimming settings sent over the CAN bus across 21 hardware tests, separating circuit noise from the firmware formula.</p></li>
+                <li class="step result"><span class="label">Result</span><p>Found a curved, not linear, response (a setting meant for 25% brightness gave 50%) and traced it to circuit noise, giving key quantified evidence for a planned hardware change.</p></li>
               </ol>
             </div>
           </li>
           <li class="point">
             <div class="point-row">
-              <span class="point-text">Ran 15+ light-dimming tests in Python with simulated data to catch where actual brightness deviated from the firmware formula (concave, not linear), then escalated the hardware issue.</span>
+              <span class="point-text">Simulated synthetic electrical noise on the trailer roof's 250 ms filter to catch a bug that caused a false stop, improving system reliability and giving users a smoother experience.</span>
               <button type="button" class="toggle" aria-expanded="false" aria-controls="p2" aria-label="Show breakdown">+</button>
             </div>
             <div class="flow" id="p2">
               <ol class="steps">
-                <li class="step"><span class="label">Problem</span><p>A 50% PWM duty cycle should mean 50% brightness, but the light output didn't follow it.</p></li>
-                <li class="step"><span class="label">What I did</span><p>Validated the PWM data going in and out of the lights, running 15+ tests in Python with simulated data to tell circuit noise from the firmware formula.</p></li>
-                <li class="step result"><span class="label">Result</span><p>Showed brightness was concave, not linear (25% duty gave 91% brightness, 75% gave 50%), quantified the loss and raised it with engineering for the next hardware release.</p></li>
+                <li class="step"><span class="label">Problem</span><p>Sensor noise on the trailer could set off false alarms.</p></li>
+                <li class="step"><span class="label">What I did</span><p>Generated synthetic noisy data to test the 250 ms smoothing filter, checking that sensors only reacted to real, sustained signals.</p></li>
+                <li class="step result"><span class="label">Result</span><p>Caught a bug that caused a false stop, making the system more reliable and the experience smoother for users.</p></li>
               </ol>
             </div>
           </li>
@@ -88,13 +88,13 @@
           </li>
           <li class="point">
             <div class="point-row">
-              <span class="point-text">Built and provisioned a hardware-in-the-loop (HIL) test server on my own, with a virtual machine for each of the trailer's ECUs.</span>
+              <span class="point-text">Built and provisioned a hardware-in-the-loop (HIL) test server on my own, with a virtual machine for each of the trailer's ECUs, and automated HIL tests for the electrical control units: sent CAN bus commands and read PWM signals on a LabJack, and sent PWM signals and checked the brightness reported back on the CAN bus.</span>
               <button type="button" class="toggle" aria-expanded="false" aria-controls="p5" aria-label="Show breakdown">+</button>
             </div>
             <div class="flow" id="p5">
               <ol class="steps">
-                <li class="step"><span class="label">Problem</span><p>Automated tests needed a hardware-in-the-loop (HIL) server to run against the trailer's control units.</p></li>
-                <li class="step"><span class="label">What I did</span><p>Built and provisioned the HIL server on my own, with a virtual machine for each of the trailer's ECUs, and built the connection to the trailer's software.</p></li>
+                <li class="step"><span class="label">Problem</span><p>Automated tests needed a hardware-in-the-loop (HIL) server to run against the trailer's electrical control units.</p></li>
+                <li class="step"><span class="label">What I did</span><p>Built and provisioned the HIL server on my own, with a virtual machine for each ECU. Wrote tests that sent CAN bus commands and read the resulting PWM signals on a LabJack, and that sent PWM signals and checked the brightness reported back on the CAN bus.</p></li>
                 <li class="step result"><span class="label">Result</span><p>Automated HIL runs report a summary plus individual test results in the same platform.</p></li>
               </ol>
             </div>
@@ -102,54 +102,54 @@
         </ul>
       </article>
 
-      <article class="project job">
+      <article class="project job" id="snap">
         <h3>Snap Inc., Software Test Engineer</h3>
         <p class="meta">Palo Alto, CA &middot; Mar 2025 &ndash; Apr 2026</p>
         <p class="blurb">Worked on the Monetization team to validate end-to-end ad flows.</p>
         <ul>
           <li class="point">
             <div class="point-row">
-              <span class="point-text">Supported ad A/B experiments: assigned test users to groups, tracked each treatment in Looker, worked with data science and ads analytics on rollout and confounding factors, and built tests for winning treatments while keeping the others compatible.</span>
+              <span class="point-text">Analyzed click-through rate across ad A/B test treatments in Looker to identify the best-performing variants; worked with data science, ads analytics and PMs on rollout and confounding factors, and built tests for the winning treatments while keeping the others compatible.</span>
               <button type="button" class="toggle" aria-expanded="false" aria-controls="p6" aria-label="Show breakdown">+</button>
             </div>
             <div class="flow" id="p6">
               <ol class="steps">
                 <li class="step"><span class="label">Problem</span><p>Several ad experiments were running and it wasn't clear which treatment did best.</p></li>
-                <li class="step"><span class="label">What I did</span><p>Analyzed the A/B results in Looker, mainly click-through rate, then met with data science, engineering and PMs to pick winners and plan end-to-end testing.</p></li>
+                <li class="step"><span class="label">What I did</span><p>Analyzed the A/B results in Looker, mainly click-through rate, then met with data science, ads analytics and PMs to pick winners, account for confounding factors and plan end-to-end testing.</p></li>
                 <li class="step result"><span class="label">Result</span><p>Built tests for the winning treatments while keeping the other treatments compatible.</p></li>
               </ol>
             </div>
           </li>
           <li class="point">
             <div class="point-row">
-              <span class="point-text">Isolated a 90% click-through rate drop on new ads by segmenting CTR by app version, reproducing the bug, and running an automated bisect that traced it to a change that stopped swipe-ups from billing; the fix shipped.</span>
+              <span class="point-text">Isolated a sharp click-through rate drop on new ads by segmenting CTR by app version, reproducing the bug, and running an automated bisect that traced it to a missing tap-logging event that stopped swipe-ups from billing; the fix shipped.</span>
               <button type="button" class="toggle" aria-expanded="false" aria-controls="p7" aria-label="Show breakdown">+</button>
             </div>
             <div class="flow" id="p7">
               <ol class="steps">
-                <li class="step"><span class="label">Problem</span><p>Click-through rate on new ads dropped 90%.</p></li>
+                <li class="step"><span class="label">Problem</span><p>Click-through rate on new ads dropped sharply.</p></li>
                 <li class="step"><span class="label">What I did</span><p>Segmented CTR by app version, found taps weren't being logged on one version, then reproduced the issue and ran an automated bisect.</p></li>
-                <li class="step result"><span class="label">Result</span><p>Traced it to the change that stopped swipe-ups from billing; the fix shipped.</p></li>
+                <li class="step result"><span class="label">Result</span><p>Traced it to a change that dropped a tap-logging event, so swipe-ups were not billed; the fix shipped.</p></li>
               </ol>
             </div>
           </li>
           <li class="point">
             <div class="point-row">
-              <span class="point-text">Built metric validation tooling that cut manual QA effort ~80% and improved confidence in releases and experiments.</span>
+              <span class="point-text">Built metric validation tooling that cut manual validation time 70% and improved confidence in releases and experiments.</span>
               <button type="button" class="toggle" aria-expanded="false" aria-controls="p8" aria-label="Show breakdown">+</button>
             </div>
             <div class="flow" id="p8">
               <ol class="steps">
-                <li class="step"><span class="label">Problem</span><p>Checking whether ad metrics matched expected behavior took a lot of manual QA.</p></li>
+                <li class="step"><span class="label">Problem</span><p>Checking whether ad metrics matched expected behavior took a lot of manual validation.</p></li>
                 <li class="step"><span class="label">What I did</span><p>Built a mobile-friendly tool that takes a JSON or Protobuf payload and returns a color-coded chart of which metrics passed or failed.</p></li>
-                <li class="step result"><span class="label">Result</span><p>Cut manual QA effort ~80% and sped up later investigations, including the CTR drop.</p></li>
+                <li class="step result"><span class="label">Result</span><p>Cut manual validation time 70% and sped up later investigations, including the CTR drop.</p></li>
               </ol>
             </div>
           </li>
         </ul>
       </article>
 
-      <article class="project job">
+      <article class="project job" id="tiktok">
         <h3>TikTok, Software Development Engineer in Test</h3>
         <p class="meta">San Jose, CA &middot; May 2024 &ndash; Mar 2025</p>
         <p class="blurb">Validated AI platform stability and functionality for the Intelligent Creations team.</p>
@@ -169,40 +169,75 @@
           </li>
           <li class="point">
             <div class="point-row">
-              <span class="point-text">Wrote the backend of a Django platform (MariaDB, MongoDB) that let data science teams run performance tests on demand and see success rate, throughput and resource usage in one view.</span>
+              <span class="point-text">Wrote the backend of a Django platform that let data science teams run performance tests on demand and see success rate, throughput and resource usage in one view, tracking each load test task in MongoDB and each parent job in MariaDB.</span>
               <button type="button" class="toggle" aria-expanded="false" aria-controls="p10" aria-label="Show breakdown">+</button>
             </div>
             <div class="flow" id="p10">
               <ol class="steps">
-                <li class="step"><span class="label">Problem</span><p>Engineers, data scientists and PMs needed to run performance tests on demand.</p></li>
-                <li class="step"><span class="label">What I did</span><p>Built the backend of a Django platform on top of the internal monitoring and load-test APIs, queuing asynchronous load tests and checking status codes plus GPU, CPU and memory.</p></li>
-                <li class="step result"><span class="label">Result</span><p>Teams see success rate, throughput and resource usage in one view and can find ways to serve more users without wasting GPUs.</p></li>
-              </ol>
-            </div>
-          </li>
-          <li class="point">
-            <div class="point-row">
-              <span class="point-text">Used MongoDB queries to track each load test task and SQL on MariaDB to track the parent job, for sync and async runs.</span>
-              <button type="button" class="toggle" aria-expanded="false" aria-controls="p11" aria-label="Show breakdown">+</button>
-            </div>
-            <div class="flow" id="p11">
-              <ol class="steps">
-                <li class="step"><span class="label">Problem</span><p>Each load test had to be tracked as a task and as part of a parent job.</p></li>
-                <li class="step"><span class="label">What I did</span><p>Used MongoDB queries for each load test task and SQL on MariaDB for the parent job.</p></li>
-                <li class="step result"><span class="label">Result</span><p>Tracking works for both sync and async runs.</p></li>
+                <li class="step"><span class="label">Problem</span><p>Engineers, data scientists and PMs needed to run performance tests on demand, with each test tracked as a task and as part of a parent job.</p></li>
+                <li class="step"><span class="label">What I did</span><p>Built the backend of a Django platform on top of the internal monitoring and load-test APIs, queuing asynchronous load tests and checking status codes plus GPU, CPU and memory. Used MongoDB queries for each task and SQL on MariaDB for the parent job.</p></li>
+                <li class="step result"><span class="label">Result</span><p>Teams see success rate, throughput and resource usage in one view, for both sync and async runs, and can find ways to serve more users without wasting GPUs.</p></li>
               </ol>
             </div>
           </li>
           <li class="point">
             <div class="point-row">
               <span class="point-text">Helped establish a 60% GPU-utilization standard and worked with data analytics on DAU-based capacity sizing.</span>
-              <button type="button" class="toggle" aria-expanded="false" aria-controls="p12" aria-label="Show breakdown">+</button>
+              <button type="button" class="toggle" aria-expanded="false" aria-controls="p11" aria-label="Show breakdown">+</button>
             </div>
-            <div class="flow" id="p12">
+            <div class="flow" id="p11">
               <ol class="steps">
                 <li class="step"><span class="label">Problem</span><p>GPUs needed to go where they were actually used.</p></li>
                 <li class="step"><span class="label">What I did</span><p>Used DAU and average usage on higher-GPU hosts to decide how many GPUs a service could give up to others.</p></li>
                 <li class="step result"><span class="label">Result</span><p>Helped establish a 60% GPU-utilization standard.</p></li>
+              </ol>
+            </div>
+          </li>
+        </ul>
+      </article>
+
+      <article class="project job" id="spacex">
+        <h3>SpaceX, Software Test Engineer</h3>
+        <p class="meta">Mountain View, CA &middot; Oct 2022 &ndash; Jan 2024</p>
+        <p class="subhead">Swarm (IoT satellite company, acquired by SpaceX)</p>
+        <p class="blurb">Tested Swarm's IoT modems and satellites.</p>
+        <ul>
+          <li class="point">
+            <div class="point-row">
+              <span class="point-text">Audited the device-to-satellite-to-cloud data flow. Sent commands through the REST API, then queried the API (backed by an AWS cloud database) to reconcile every message and command record against what devices sent or received.</span>
+              <button type="button" class="toggle" aria-expanded="false" aria-controls="p12" aria-label="Show breakdown">+</button>
+            </div>
+            <div class="flow" id="p12">
+              <ol class="steps">
+                <li class="step"><span class="label">Problem</span><p>Messages and commands pass from devices to satellites to the cloud, and every record had to match what actually happened on the device.</p></li>
+                <li class="step"><span class="label">What I did</span><p>Sent commands through the REST API, then queried the API, backed by an AWS cloud database, and reconciled each message and command record against what the devices sent or received.</p></li>
+                <li class="step result"><span class="label">Result</span><p>Every message and command record in the cloud was checked against what the device actually did, end to end.</p></li>
+              </ol>
+            </div>
+          </li>
+          <li class="point">
+            <div class="point-row">
+              <span class="point-text">Built automated tests for satellite communications across user devices and the cloud backend, sending API commands and verifying over serial port that device behavior matched.</span>
+              <button type="button" class="toggle" aria-expanded="false" aria-controls="p13" aria-label="Show breakdown">+</button>
+            </div>
+            <div class="flow" id="p13">
+              <ol class="steps">
+                <li class="step"><span class="label">Problem</span><p>Communication between user devices, satellites and the cloud backend needed repeatable checks instead of manual runs.</p></li>
+                <li class="step"><span class="label">What I did</span><p>Built automated tests that sent commands through the API and read device output over the serial port to confirm the device did what the command asked.</p></li>
+                <li class="step result"><span class="label">Result</span><p>Device and backend behavior could be checked together on every run.</p></li>
+              </ol>
+            </div>
+          </li>
+          <li class="point">
+            <div class="point-row">
+              <span class="point-text">Simulated how long satellite message queues took to drain, and tested telemetry systems using spoofed GPS data.</span>
+              <button type="button" class="toggle" aria-expanded="false" aria-controls="p14" aria-label="Show breakdown">+</button>
+            </div>
+            <div class="flow" id="p14">
+              <ol class="steps">
+                <li class="step"><span class="label">Problem</span><p>Needed to know how message queues behaved under load and whether telemetry handled location data correctly.</p></li>
+                <li class="step"><span class="label">What I did</span><p>Simulated queue drain times for satellite messages, and fed spoofed GPS data into the telemetry systems to test them against known positions.</p></li>
+                <li class="step result"><span class="label">Result</span><p>Queue drain behavior and telemetry handling were tested against controlled inputs instead of waiting for real-world conditions.</p></li>
               </ol>
             </div>
           </li>
@@ -214,7 +249,7 @@
 
   <footer>
     <div class="wrap">
-      <p>Raw datasets are not hosted on this site. Course project write-ups are available on request.</p>
+      <p>Course project write-ups are available on request.</p>
     </div>
   </footer>
   <script src="script.js"></script>

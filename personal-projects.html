@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Personal Projects | Anirudh Shenai</title>
-  <meta name="description" content="Personal SQL and data projects by Anirudh Shenai.">
+  <meta name="description" content="Personal data projects by Anirudh Shenai, data analyst in the San Francisco Bay Area.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <div class="wrap">
       <h1>Anirudh Shenai</h1>
-      <p class="tagline">M.S. Analytics candidate at Georgia Tech (expected May 2027), moving into data science from over four years in software test engineering.</p>
+      <p class="tagline">Data analyst in the San Francisco Bay Area. A/B test analysis, metric validation and root-cause work at Snap, TikTok, SpaceX and Lightship. Georgia Tech M.S. Analytics, May 2027.</p>
     </div>
   </header>
   <div class="navbar">
@@ -25,7 +25,30 @@
   <main class="wrap">
     <section>
       <h2>Personal Projects</h2>
-      <p>Self-directed projects where I practice SQL on public data. I'll add each one here when it's finished.</p>
+      <p>Self-directed projects outside of work and school.</p>
+
+      <article class="project" id="hypothetical-pl">
+        <h3>Hypothetical PL</h3>
+        <p class="meta">Personal project &middot; Apr 2019 &ndash; Mar 2020</p>
+        <p>Built a four-season Premier League simulation: a Python program wrote match events into Google Sheets, and formulas turned them into league tables, scoring charts and player form that fed back into ratings. Each season ran 38 gameweeks. The rosters were fantasy and intentionally unrealistic, including 49 made-up players marked "(N)." I wrote the Python myself; no AI was used to write the code.</p>
+        <p><strong>Match engine.</strong> Team strength is the sum of the starters' FIFA ratings plus half the subs' ratings, with a home advantage bonus. Tactics work like rock-paper-scissors, with special "park the bus" and "all-out attack" options. Scorelines come from probability tables chosen by the rating gap between the teams. Scorers and assisters are picked by weighted random draws based on position and rating, with penalties, free kicks and own goals handled separately. Player match ratings use Fantasy Premier League-style points. The engine also simulates cards, injuries, fatigue, two-leg cup ties and penalty shootouts, and writes match commentary.</p>
+        <p><strong>Pipeline.</strong> The program wrote goalscorers, assisters, per-game player ratings, injuries, suspensions and yellow cards into the sheet. To stay within the sheet's write limits, it packed several values into one cell separated by ";" and formulas split them back out.</p>
+        <p><strong>Sheet logic.</strong> IFS scored each result as a win, draw or loss. SUMIF totaled each team's wins, draws, losses and goals. SORT built the league table from points and goal difference. FILTER built top-scorer and top-assist lists, excluding own goals and unassisted goals. QUERY pulled each player's two most recent ratings to compute form, and LOOKUP turned form into a rating adjustment that fed back into the rosters. Conditional formatting colored players red or green by form.</p>
+        <p><strong>Scope.</strong> 15 tabs, including league results, transfers, squad sheets, academies, player morale (the "Wantaway list"), European and domestic cups, and a match database of about 480,000 filled cells.</p>
+        <!-- TODO: add 2-3 screenshots: league table, squad sheets with form colors, Technical Descriptions tab -->
+        <ul class="links">
+          <li><a href="https://docs.google.com/spreadsheets/d/1QxcviNd2_41C7n80YJP0qMjTAd_sKYSXLIig0c9iI7s/edit?usp=sharing">Season 4 workbook (view only)</a></li>
+          <!-- TODO: add code link once the repo is on the main GitHub account -->
+        </ul>
+        <p class="tools">Tools: Python, Google Sheets</p>
+      </article>
+
+      <article class="project" id="hypothetical-pl-refresh">
+        <h3>Hypothetical PL refresh <span class="status">Planned</span></h3>
+        <p class="meta">Personal project</p>
+        <p>Update the engine with current EA FC player ratings, forecast the 2026&ndash;27 season over 10,000 simulations, and publish the results as an interactive dashboard (Tableau Public or a web page).</p>
+        <p class="tools">Tools: Python, Tableau</p>
+      </article>
 
       <article class="project">
         <h3>Alternative Rock Artist Survival <span class="status">Planned</span></h3>
@@ -40,7 +63,7 @@
 
   <footer>
     <div class="wrap">
-      <p>Raw datasets are not hosted on this site. Course project write-ups are available on request.</p>
+      <p>Course project write-ups are available on request.</p>
     </div>
   </footer>
 </body>

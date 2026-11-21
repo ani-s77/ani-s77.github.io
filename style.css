@@ -199,3 +199,40 @@ a:hover { color: #9ccdf0; }
 }
 .navbar nav { margin: 0; padding: 10px 0; }
 .back { margin: 32px 0 0; }
+
+/* Home: quick links, featured cards, skills */
+.quick { margin-top: 16px; }
+.featured { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.feature {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 16px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--text);
+  text-decoration: none;
+}
+.feature:hover { border-color: var(--accent); color: var(--text); }
+.feature-kicker { color: var(--muted); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.feature-title { color: var(--accent); font-weight: bold; line-height: 1.3; }
+.feature-text { font-size: 0.92rem; color: var(--muted); }
+@media (max-width: 640px) { .featured { grid-template-columns: 1fr; } }
+
+.skills { display: grid; grid-template-columns: 11rem 1fr; gap: 8px 16px; margin: 0 0 12px; }
+.skills dt { color: var(--muted); }
+.skills dd { margin: 0; }
+@media (max-width: 480px) { .skills { grid-template-columns: 1fr; gap: 2px; } .skills dd { margin-bottom: 10px; } }
+
+/* Project visuals */
+.figure { margin: 12px 0 8px; }
+.figure svg { display: block; width: 100%; height: auto; }
+.figure figcaption { margin-top: 4px; color: var(--muted); font-size: 0.82rem; }
+.figure .ax { stroke: var(--line); }
+.figure .lbl { fill: var(--muted); font: 16px Georgia, serif; }
+.figure .val { fill: var(--text); font: 16px Georgia, serif; }
+.figure .bar { fill: var(--muted); }
+.figure .bar-hi { fill: var(--accent); }
+.figure .line { stroke: var(--accent); }
+.subhead { margin: 0 0 6px; color: var(--muted); font-size: 0.92rem; }
