@@ -98,95 +98,6 @@ a:hover { color: #9ccdf0; }
 .intro { font-size: 1.15rem; }
 .intro .hi { font-size: 1.6rem; margin: 0 0 12px; }
 
-/* Animated pipelines (Work page) */
-.legend { color: var(--muted); margin: 0 0 20px; }
-.flow { margin: 12px 0 4px; }
-.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; padding: 0; margin: 0; list-style: none; }
-.step {
-  position: relative;
-  padding: 10px 12px;
-  background: var(--bg);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  font-size: 0.92rem;
-}
-.step p { margin: 0; }
-.step .label {
-  display: block;
-  margin-bottom: 4px;
-  color: var(--muted);
-  font-size: 0.7rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-.step.result { border-color: var(--accent); }
-.step.result .label { color: var(--accent); }
-.step:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 100%;
-  width: 30px;
-  height: 2px;
-  background: var(--accent);
-  transform-origin: left center;
-}
-.step:not(:last-child)::before {
-  content: "";
-  position: absolute;
-  top: calc(50% - 4px);
-  left: calc(100% + 24px);
-  border: 5px solid transparent;
-  border-left: 7px solid var(--accent);
-  border-right: 0;
-}
-
-.js .flow .step { opacity: 0; transform: translateY(8px); transition: opacity .5s ease, transform .5s ease, box-shadow .6s ease; }
-.js .flow .step:not(:last-child)::after { transform: scaleX(0); transition: transform .4s ease; }
-.js .flow .step:not(:last-child)::before { opacity: 0; transition: opacity .2s ease; }
-.js .flow.in .step { opacity: 1; transform: none; }
-.js .flow.in .step:nth-child(1) { transition-delay: 0s; }
-.js .flow.in .step:nth-child(1)::after { transition-delay: .35s; transform: scaleX(1); }
-.js .flow.in .step:nth-child(1)::before { transition-delay: .7s; opacity: 1; }
-.js .flow.in .step:nth-child(2) { transition-delay: .7s; }
-.js .flow.in .step:nth-child(2)::after { transition-delay: 1.05s; transform: scaleX(1); }
-.js .flow.in .step:nth-child(2)::before { transition-delay: 1.4s; opacity: 1; }
-.js .flow.in .step:nth-child(3) { transition-delay: 1.4s; box-shadow: 0 0 0 1px var(--accent), 0 0 18px rgba(108, 180, 228, .25); }
-
-@media (max-width: 640px) {
-  .steps { grid-template-columns: 1fr; gap: 26px; }
-  .step:not(:last-child)::after { top: 100%; left: 50%; width: 2px; height: 26px; transform-origin: center top; }
-  .js .flow .step:not(:last-child)::after { transform: scaleY(0); }
-  .js .flow.in .step:nth-child(n)::after { transform: scaleY(1); }
-  .step:not(:last-child)::before { top: calc(100% + 18px); left: calc(50% - 5px); border: 5px solid transparent; border-top: 7px solid var(--accent); border-bottom: 0; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .js .flow .step, .js .flow .step::after, .js .flow .step::before { transition: none !important; opacity: 1 !important; transform: none !important; }
-}
-
-/* Expand (+) buttons */
-.point-row { display: flex; align-items: flex-start; gap: 12px; }
-.point-text { flex: 1; }
-.toggle { display: none; }
-.js .toggle {
-  display: inline-flex;
-  flex: none;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  margin-top: 1px;
-  padding: 0;
-  background: transparent;
-  border: 1px solid var(--accent);
-  border-radius: 50%;
-  color: var(--accent);
-  font: 1.1rem/1 Georgia, serif;
-  cursor: pointer;
-}
-.js .toggle:hover, .toggle:focus-visible { background: var(--accent); color: var(--bg); outline: none; }
-.flow[hidden] { display: none; }
-
 /* Sticky navigation + back link */
 .navbar {
   position: sticky;
@@ -237,3 +148,5 @@ a:hover { color: #9ccdf0; }
 .figure .line { stroke: var(--accent); }
 .subhead { margin: 0 0 6px; color: var(--muted); font-size: 0.92rem; }
 .figure.shot img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 6px; }
+
+p, li, figcaption, .feature-text { text-wrap: pretty; }

@@ -11,7 +11,7 @@
   <header>
     <div class="wrap">
       <h1>Anirudh Shenai</h1>
-      <p class="tagline">Data analyst in the San Francisco Bay Area. A/B test analysis, metric validation and root-cause work at Snap, TikTok, SpaceX and Lightship. Georgia Tech M.S. Analytics, May 2027.</p>
+      <p class="tagline">Data analyst in the San Francisco Bay Area. Ads experiments, metric validation and root-cause work at Snap, TikTok, SpaceX and Lightship. Georgia Tech M.S. Analytics, May 2027.</p>
     </div>
   </header>
   <div class="navbar">
@@ -30,8 +30,7 @@
       <article class="project" id="depot">
         <h3>Autonomous Vehicle Depot Siting <span class="status">In progress</span></h3>
         <p class="meta">Georgia Tech Data and Visual Analytics &middot; Team of 4 &middot; Aug 2026 &ndash; present</p>
-        <p><strong>Question:</strong> Where should self-driving taxi depots go in Chicago to keep land and empty-driving costs down while meeting rider demand?</p>
-        <p>We screened 32,007 Cook County parcels down to 2,018 candidate lots by zoning, size and distance to an electrical substation, using Chicago rideshare trips as the demand data. I helped design the evaluation (a cost sensitivity sweep, with sites chosen on 2024 trips and tested on 2025 trips) and built a k-means baseline to check whether the optimization beats simple clustering. We present it at the course's final poster session.</p>
+        <p>Screened 32,007 Cook County parcels to 2,018 candidate depot lots for self-driving taxis in Chicago, by zoning, size and distance to an electrical substation. Designed the evaluation, which tests site choices from 2024 rideshare trips against 2025 trips with a cost sensitivity sweep, and built the k-means baseline the optimization is compared against. Presenting at the course's final poster session.</p>
         <figure class="figure"><svg viewBox="0 0 600 92" role="img" aria-label="Parcels screened to candidate depot lots"><title>Parcels screened to candidate depot lots</title><text class="lbl" x="140" y="30.0" text-anchor="end">Cook County parcels</text><rect class="bar" x="150" y="12" width="380.0" height="28" rx="3"/><text class="val" x="538.0" y="30.0">32,007</text><text class="lbl" x="140" y="70.0" text-anchor="end">Candidate lots</text><rect class="bar-hi" x="150" y="52" width="24.0" height="28" rx="3"/><text class="val" x="182.0" y="70.0">2,018</text><line class="ax" x1="150" x2="150" y1="0" y2="92"/></svg><figcaption>Screening by zoning, lot size and distance to an electrical substation.</figcaption></figure>
         <figure class="figure shot"><a href="img/depot-siting-tool.webp"><img src="img/depot-siting-tool.webp" alt="Depot siting tool showing candidate lots across Chicago in gray, five k-means depot sites in orange, and a cost comparison of the model, k-means and cheapest-land plans" loading="lazy"></a><figcaption>Our siting tool with the k-means baseline selected: candidate lots in gray and its five depot sites in orange. In this run (10% AV share, $1 per empty mile, $250k fixed cost per depot), the k-means plan cost 4.7% more per year than the optimization model, and picking the cheapest land cost 245% more. Select the image to view it full size.</figcaption></figure>
         <p class="tools">Tools: Python, SQL, k-means</p>
@@ -40,8 +39,7 @@
       <article class="project" id="forecasting">
         <h3>Passenger Vehicle Supply and Demand Forecasting</h3>
         <p class="meta">Georgia Tech Time Series &middot; Team of 3 &middot; Jan 2026 &ndash; May 2026</p>
-        <p><strong>Question:</strong> Do supply conditions, travel activity and gas prices help forecast U.S. vehicle sales better than assuming next month looks like this month?</p>
-        <p>Change-point detection found four breaks in 24 years of monthly sales (April 2008, August 2011, February 2014, December 2019), and what drives sales changed from period to period. On a Feb 2022 to Jan 2024 holdout, the simple benchmark (3.3% average error) beat our best model (6.5%), so the outside variables explained more but did not improve short-term forecasts.</p>
+        <p>Showed that supply conditions, travel activity and gas prices did not improve short-term forecasts of U.S. passenger vehicle sales: on a Feb 2022 to Jan 2024 holdout, a simple benchmark (3.3% average error) beat our best model (6.5%). Change-point detection found four breaks in 24 years of monthly sales, and the drivers of sales changed between them.</p>
         <figure class="figure"><svg viewBox="0 0 600 84" role="img" aria-label="Four change points in 24 years of monthly U.S. vehicle sales"><title>Four change points in monthly U.S. vehicle sales</title><line class="line" x1="30" x2="570" y1="40" y2="40" stroke-width="2"/><line class="line" x1="215.6" x2="215.6" y1="28" y2="52" stroke-width="2"/><circle cx="215.6" cy="40" r="5" class="bar-hi"/><text class="val" x="215.6" y="18" text-anchor="middle">Apr 2008</text><line class="line" x1="290.6" x2="290.6" y1="28" y2="52" stroke-width="2"/><circle cx="290.6" cy="40" r="5" class="bar-hi"/><text class="val" x="290.6" y="72" text-anchor="middle">Aug 2011</text><line class="line" x1="346.9" x2="346.9" y1="28" y2="52" stroke-width="2"/><circle cx="346.9" cy="40" r="5" class="bar-hi"/><text class="val" x="346.9" y="18" text-anchor="middle">Feb 2014</text><line class="line" x1="478.1" x2="478.1" y1="28" y2="52" stroke-width="2"/><circle cx="478.1" cy="40" r="5" class="bar-hi"/><text class="val" x="478.1" y="72" text-anchor="middle">Dec 2019</text></svg><figcaption>Change points found in 24 years of monthly sales; each period had different drivers.</figcaption></figure>
         <figure class="figure"><svg viewBox="0 0 600 92" role="img" aria-label="Average holdout error, Feb 2022 to Jan 2024"><title>Average holdout error, Feb 2022 to Jan 2024</title><text class="lbl" x="140" y="30.0" text-anchor="end">Simple benchmark</text><rect class="bar-hi" x="150" y="12" width="192.9" height="28" rx="3"/><text class="val" x="350.9" y="30.0">3.3%</text><text class="lbl" x="140" y="70.0" text-anchor="end">Best model</text><rect class="bar" x="150" y="52" width="380.0" height="28" rx="3"/><text class="val" x="538.0" y="70.0">6.5%</text><line class="ax" x1="150" x2="150" y1="0" y2="92"/></svg><figcaption>Average forecast error on the Feb 2022 to Jan 2024 holdout. Lower is better.</figcaption></figure>
         <p class="tools">Tools: Python, statsmodels, ruptures, ARIMAX, SARIMAX, Prophet</p>
@@ -50,8 +48,7 @@
       <article class="project" id="credit">
         <h3>Credit Default Prediction <span class="status">In progress</span></h3>
         <p class="meta">Georgia Tech Computational Data Analytics &middot; Team of 3 &middot; Aug 2026 &ndash; present</p>
-        <p><strong>Question:</strong> Can we predict which loans will default, and does the model still work on later years it has not seen?</p>
-        <p>Using Lending Club data (2007&ndash;2018), we train on earlier years and test on later ones. We built a first model and compared several basic model types as a baseline, and we are checking how rejected applicants differ from approved ones to look for selection bias.</p>
+        <p>Predicting which Lending Club loans (2007&ndash;2018) will default, training on earlier years and testing on later ones. Built the first model and a baseline comparison of several model types; now checking how rejected applicants differ from approved ones to look for selection bias.</p>
         <!-- TODO: add model comparison chart once results are final -->
         <p class="tools">Tools: Python</p>
       </article>
@@ -59,8 +56,7 @@
       <article class="project" id="dysarthria">
         <h3>Dysarthria Speech Understanding via Multi-Task Learning</h3>
         <p class="meta">Georgia Tech Deep Learning &middot; Team of 4 &middot; May 2026 &ndash; Aug 2026</p>
-        <p><strong>Question:</strong> How well do modern speech models handle speech from people with dysarthria?</p>
-        <p>I built the testing setup and parameter search to compare Whisper and Wav2Vec 2.0. Tuning cut Whisper's word error rate from 39.2% to 31.3%. On 28 unseen speakers (UA-Speech), Whisper cut intelligibility error by about 53% against a traditional baseline. The model flagged impairment even when it missed the exact severity grade: 21.7% exact accuracy, 94.5% within one level.</p>
+        <p>Cut Whisper's word error rate on dysarthric speech from 39.2% to 31.3% by building the evaluation and parameter search comparing Whisper and Wav2Vec 2.0. On 28 unseen speakers (UA-Speech), Whisper cut intelligibility error by about 53% against a traditional baseline, and placed severity within one level 94.5% of the time.</p>
         <figure class="figure"><svg viewBox="0 0 600 92" role="img" aria-label="Whisper word error rate before and after tuning"><title>Whisper word error rate before and after tuning</title><text class="lbl" x="140" y="30.0" text-anchor="end">Before tuning</text><rect class="bar" x="150" y="12" width="380.0" height="28" rx="3"/><text class="val" x="538.0" y="30.0">39.2%</text><text class="lbl" x="140" y="70.0" text-anchor="end">After tuning</text><rect class="bar-hi" x="150" y="52" width="303.4" height="28" rx="3"/><text class="val" x="461.4" y="70.0">31.3%</text><line class="ax" x1="150" x2="150" y1="0" y2="92"/></svg><figcaption>Whisper word error rate before and after tuning. Lower is better.</figcaption></figure>
         <p class="tools">Tools: Python, PyTorch, Whisper, Wav2Vec 2.0</p>
       </article>
@@ -68,8 +64,7 @@
       <article class="project" id="trading">
         <h3>Trading Strategy Evaluation</h3>
         <p class="meta">Georgia Tech Machine Learning for Trading &middot; Individual &middot; May 2025 &ndash; Aug 2025</p>
-        <p><strong>Question:</strong> Can simple rules built from price indicators beat buy-and-hold on JPMorgan stock, and can a machine learning model do better?</p>
-        <p>A rule-based strategy built from three indicators lost less than buy-and-hold on unseen data (-3.4% vs -8.5%). A random forest trained on buy, sell and hold labels beat the rules on the data it was built on but fell behind on unseen data, a sign of overfitting, and I reported it that way.</p>
+        <p>Built a rule-based JPMorgan trading strategy from three price indicators that lost less than buy-and-hold on unseen data (-3.4% vs -8.5%). A random forest beat the rules on its training data but fell behind on unseen data, and I reported it as overfitting.</p>
         <figure class="figure"><svg viewBox="0 0 600 92" role="img" aria-label="Return on unseen data"><title>Return on unseen data</title><text class="lbl" x="140" y="30.0" text-anchor="end">Rule-based strategy</text><rect class="bar-hi" x="150" y="12" width="152.0" height="28" rx="3"/><text class="val" x="310.0" y="30.0">-3.4%</text><text class="lbl" x="140" y="70.0" text-anchor="end">Buy-and-hold</text><rect class="bar" x="150" y="52" width="380.0" height="28" rx="3"/><text class="val" x="538.0" y="70.0">-8.5%</text><line class="ax" x1="150" x2="150" y1="0" y2="92"/></svg><figcaption>Return on unseen JPMorgan data. Both lost money; the rules lost less.</figcaption></figure>
         <p class="tools">Tools: Python, random forest</p>
       </article>

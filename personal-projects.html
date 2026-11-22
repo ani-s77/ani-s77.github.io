@@ -11,7 +11,7 @@
   <header>
     <div class="wrap">
       <h1>Anirudh Shenai</h1>
-      <p class="tagline">Data analyst in the San Francisco Bay Area. A/B test analysis, metric validation and root-cause work at Snap, TikTok, SpaceX and Lightship. Georgia Tech M.S. Analytics, May 2027.</p>
+      <p class="tagline">Data analyst in the San Francisco Bay Area. Ads experiments, metric validation and root-cause work at Snap, TikTok, SpaceX and Lightship. Georgia Tech M.S. Analytics, May 2027.</p>
     </div>
   </header>
   <div class="navbar">
@@ -30,11 +30,9 @@
       <article class="project" id="hypothetical-pl">
         <h3>Hypothetical PL</h3>
         <p class="meta">Personal project &middot; Apr 2019 &ndash; Mar 2020</p>
-        <p>Built a four-season Premier League simulation: a Python program wrote match events into Google Sheets, and formulas turned them into league tables, scoring charts and player form that fed back into ratings. Each season ran 38 gameweeks. The rosters were fantasy and intentionally unrealistic, including 49 made-up players marked "(N)." I wrote the Python myself; no AI was used to write the code.</p>
-        <p><strong>Match engine.</strong> Team strength is the sum of the starters' FIFA ratings plus half the subs' ratings, with a home advantage bonus. Tactics work like rock-paper-scissors, with special "park the bus" and "all-out attack" options. Scorelines come from probability tables chosen by the rating gap between the teams. Scorers and assisters are picked by weighted random draws based on position and rating, with penalties, free kicks and own goals handled separately. Player match ratings use Fantasy Premier League-style points. The engine also simulates cards, injuries, fatigue, two-leg cup ties and penalty shootouts, and writes match commentary.</p>
-        <p><strong>Pipeline.</strong> The program wrote goalscorers, assisters, per-game player ratings, injuries, suspensions and yellow cards into the sheet. To stay within the sheet's write limits, it packed several values into one cell separated by ";" and formulas split them back out.</p>
-        <p><strong>Sheet logic.</strong> IFS scored each result as a win, draw or loss. SUMIF totaled each team's wins, draws, losses and goals. SORT built the league table from points and goal difference. FILTER built top-scorer and top-assist lists, excluding own goals and unassisted goals. QUERY pulled each player's two most recent ratings to compute form, and LOOKUP turned form into a rating adjustment that fed back into the rosters. Conditional formatting colored players red or green by form.</p>
-        <p><strong>Scope.</strong> 15 tabs, including league results, transfers, squad sheets, academies, player morale (the "Wantaway list"), European and domestic cups, and a match database of about 480,000 filled cells.</p>
+        <p>Simulated four 38-gameweek Premier League seasons with fantasy rosters: a Python match engine I wrote fed match events into Google Sheets, where formulas turned them into league tables, scoring charts and player form that fed back into ratings. No AI was used to write the code.</p>
+        <p><strong>Match engine.</strong> Scorelines come from probability tables chosen by the rating gap between teams, with team strength built from player FIFA ratings, a home advantage bonus and rock-paper-scissors tactics. It also simulates scorers, assists, cards, injuries, fatigue, cup ties and penalty shootouts.</p>
+        <p><strong>Sheets.</strong> IFS, SUMIF, SORT, FILTER, QUERY and LOOKUP build results, the league table, top-scorer lists and player form across 15 tabs and a match database of about 480,000 filled cells.</p>
         <figure class="figure shot"><img src="img/hpl-league-table.png" alt="Simulated Premier League table at the halfway point, with places, wins, draws, losses, points and goal difference" loading="lazy"><figcaption>League table halfway through a season, built with SUMIF and SORT.</figcaption></figure>
         <figure class="figure shot"><img src="img/hpl-squad-form.png" alt="Squad sheets for several teams with player ratings, cells shaded red or green by form" loading="lazy"><figcaption>Squad sheets. Conditional formatting shades each player red or green by recent form.</figcaption></figure>
         <figure class="figure shot"><img src="img/hpl-technical-descriptions.png" alt="Technical Descriptions tab listing each sheet, the formulas it uses and what they do" loading="lazy"><figcaption>The workbook's Technical Descriptions tab.</figcaption></figure>
