@@ -47,10 +47,12 @@
 
       <article class="project" id="credit">
         <h3>Credit Default Prediction <span class="status">In progress</span></h3>
-        <p class="meta">Georgia Tech Computational Data Analytics &middot; Team of 3 &middot; Aug 2026 &ndash; present</p>
-        <p>Predicting which Lending Club loans (2007&ndash;2018) will default, training on earlier years and testing on later ones. Built the first model and a baseline comparison of several model types; now checking how rejected applicants differ from approved ones to look for selection bias.</p>
-        <!-- TODO: add model comparison chart once results are final -->
-        <p class="tools">Tools: Python</p>
+        <p class="meta">Georgia Tech Computational Data Analysis (ISYE 6740) &middot; Team of 3 &middot; Aug 2026 &ndash; present</p>
+        <p>Built a default model for Lending Club loans that ranks risk better than Lending Club's own sub-grade using only borrower and credit-bureau data (test AUC 0.685 vs 0.679 on 2015 loans). Adding Lending Club's grade and interest rate on top reached 0.702.</p>
+        <figure class="figure"><svg viewBox="0 0 600 172" role="img" aria-label="Test AUC on 2015 loans: Lending Club grade 0.668, sub-grade 0.679, model without Lending Club grade 0.685, model with it 0.702"><title>Test AUC on 2015 loans</title><text class="lbl" x="210" y="31.0" text-anchor="end">Lending Club grade</text><rect class="bar" x="220" y="12" width="208.3" height="28" rx="3"/><text class="val" x="436.3" y="31.0">0.668</text><text class="lbl" x="210" y="71.0" text-anchor="end">Lending Club sub-grade</text><rect class="bar" x="220" y="52" width="222.0" height="28" rx="3"/><text class="val" x="450.0" y="71.0">0.679</text><text class="lbl" x="210" y="111.0" text-anchor="end">Model, borrower data only</text><rect class="bar-hi" x="220" y="92" width="229.4" height="28" rx="3"/><text class="val" x="457.4" y="111.0">0.685</text><text class="lbl" x="210" y="151.0" text-anchor="end">Model + LC grade and rate</text><rect class="bar-hi" x="220" y="132" width="250.5" height="28" rx="3"/><text class="val" x="478.5" y="151.0">0.702</text><line class="ax" x1="220" x2="220" y1="0" y2="172"/></svg><figcaption>Test AUC on 2015 loans, trained on 2012&ndash;2014. Bars start at 0.5, the AUC of random guessing. Higher is better.</figcaption></figure>
+        <p>Designed the team's ETL pipeline, keeping only fields known when each loan was issued to prevent leakage and only loans whose full term had ended: 633,528 loans from 2012&ndash;2015, about 15% of which defaulted. Wrote the SQLite query that adds each borrower's income relative to their ZIP area, a CTE aggregating 139,000 IRS records joined on the prior tax year to limit look-ahead. Trained on 2012&ndash;2014 and tested on 2015, the way a lender would use the model.</p>
+        <p>Showed that location data (area income, house price trends, local economic conditions and ZIP-area default rates) added under 0.001 AUC, so location can be left out of the model, avoiding fair-lending risk at no cost to performance. Next: gradient-boosted models, calibration and the rejected-applicant analysis of selection bias.</p>
+        <p class="tools">Tools: Python, pandas, scikit-learn, SQL (SQLite), Parquet</p>
       </article>
 
       <article class="project" id="dysarthria">
